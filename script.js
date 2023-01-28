@@ -1,6 +1,5 @@
-let gridContainer = document.querySelector('.grid-container');
-
 let button = document.querySelector('.generator-button');
+let bodyContainer = document.querySelector('.body-container');
 
 button.addEventListener('click', (e) => {
     let userChoice = prompt('How many squares would you like in your grid per side? (limit: 100)');
@@ -22,6 +21,11 @@ button.addEventListener('click', (e) => {
 function createGrid(dimensions) {
     
     let totalDimensions = dimensions * dimensions;
+
+    let gridContainer = document.createElement('div');
+    gridContainer.classList.add('grid-container');
+
+    bodyContainer.appendChild(gridContainer);
     
     for (let i = dimensions; i <= totalDimensions; i++) {
         let newBox = createBox();
