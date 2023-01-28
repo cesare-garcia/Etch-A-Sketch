@@ -33,13 +33,14 @@ function createGrid(dimensions) {
 
     bodyContainer.appendChild(gridContainer);
     
-    for (let i = dimensions; i <= totalDimensions; i++) {
-        let newBox = createBox();
+    for (let i = 1; i <= totalDimensions; i++) {
+        let newBox = createBox(dimensions);
         gridContainer.appendChild(newBox);
     }
 }
 
-function createBox() {
+function createBox(dimensions) {
+    console.log(dimensions);
     let box = document.createElement('div');
     box.classList.add('grid-box');
     return box;
