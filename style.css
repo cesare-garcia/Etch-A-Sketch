@@ -41,9 +41,11 @@ button {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    width: 450px;
-    height: 430px;
-    margin: 0;
+    width: 550px;
+    height: 550px;
+    margin-bottom: 30px;
+    border: solid;
+    border-width: 10px;
 }
 
 .grid-box {
