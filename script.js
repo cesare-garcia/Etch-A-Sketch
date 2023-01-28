@@ -1,9 +1,6 @@
-let bodyContainer = document.querySelector('.body-container');
+let gridContainer = document.querySelector('.grid-container');
 
-for (let i = 0; i < 256; i++) {
-    let newBox = createBox();
-    bodyContainer.appendChild(newBox);
-}
+createGrid(20);
 
 let boxes = document.querySelectorAll('.grid-box');
 
@@ -11,6 +8,17 @@ for (const box of boxes) {
     box.addEventListener('mouseover', (e) => {
         box.style.backgroundColor = 'red';
     });
+}
+
+function createGrid(dimensions) {
+    
+    
+    let totalDimensions = dimensions * dimensions;
+    
+    for (let i = dimensions; i <= totalDimensions; i++) {
+        let newBox = createBox();
+        gridContainer.appendChild(newBox);
+    }
 }
 
 function createBox() {
