@@ -3,14 +3,19 @@ let gridContainer = document.querySelector('.grid-container');
 let button = document.querySelector('.generator-button');
 
 button.addEventListener('click', (e) => {
-    let userChoice = prompt('How many squares would you like in your grid per side?');
-    createGrid(userChoice);
-    let boxes = document.querySelectorAll('.grid-box');
+    let userChoice = prompt('How many squares would you like in your grid per side? (limit: 100)');
 
-    for (const box of boxes) {
-        box.addEventListener('mouseover', (e) => {
-            box.style.backgroundColor = 'red';
-        });
+    if ( userChoice > 100 ) {
+        alert('Please click the button again and enter a value less than or equal to 100.');   
+    } else {
+        createGrid(userChoice);
+        let boxes = document.querySelectorAll('.grid-box');
+
+        for (const box of boxes) {
+            box.addEventListener('mouseover', (e) => {
+                box.style.backgroundColor = 'red';
+            });
+        }
     }
 })
 
