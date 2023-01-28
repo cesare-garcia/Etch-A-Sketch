@@ -7,6 +7,12 @@ button.addEventListener('click', (e) => {
     if ( userChoice > 100 ) {
         alert('Please click the button again and enter a value less than or equal to 100.');   
     } else {
+                
+        if ( bodyContainer.children.length > 2 ) {
+            let removeGrid = document.querySelector('.grid-container');
+            bodyContainer.removeChild(removeGrid);
+        }
+        
         createGrid(userChoice);
         let boxes = document.querySelectorAll('.grid-box');
 
