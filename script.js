@@ -41,7 +41,12 @@ function createGrid(dimensions) {
 
 function createBox(dimensions) {
     console.log(dimensions);
+    let intDimensions = parseInt(dimensions);
+    let adjustedMeasurements = intDimensions + 2;
+    console.log(adjustedMeasurements);
     let box = document.createElement('div');
     box.classList.add('grid-box');
+    box.style.height = `${(550/adjustedMeasurements)}px`;
+    box.style.width = `${(550/adjustedMeasurements)}px`;
     return box;
 }
