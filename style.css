@@ -44,15 +44,9 @@ button {
     width: 550px;
     height: 550px;
     margin-bottom: 30px;
-    border: solid;
-    border-width: 10px;
 }
 
 .grid-box {
-    min-height: 25px;
-    max-height: 25px;
-    min-width: 25px;
-    max-width: 25px;
     border: solid;
     border-width: 1px;
     margin: 0;
