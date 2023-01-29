@@ -24,6 +24,8 @@ button.addEventListener('click', (e) => {
     }
 })
 
+// console.log gridColumn if you need to verify # of children attached to a column.
+
 function createGrid(dimensions) {
     
     let totalDimensions = dimensions * dimensions;
@@ -33,17 +35,24 @@ function createGrid(dimensions) {
 
     bodyContainer.appendChild(gridContainer);
     
-    for (let i = 1; i <= totalDimensions; i++) {
-        let newBox = createBox(dimensions);
-        gridContainer.appendChild(newBox);
+    for (let i = 1; i <= dimensions; i++) {
+        
+        let gridColumn = document.createElement('div');
+        gridColumn.classList.add('grid-column');
+        gridContainer.appendChild(gridColumn);
+        
+        for (let j = 1; j <= dimensions; j++ ) {
+            let newBox = createBox(dimensions);
+            gridColumn.appendChild(newBox);
+        }
     }
 }
 
+// add a console log for dimensions in this function if not sure it's coming through.
+
 function createBox(dimensions) {
-    console.log(dimensions);
     let intDimensions = parseInt(dimensions);
     let adjustedMeasurements = intDimensions + 2;
-    console.log(adjustedMeasurements);
     let box = document.createElement('div');
     box.classList.add('grid-box');
     box.style.height = `${(550/adjustedMeasurements)}px`;
