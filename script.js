@@ -3,9 +3,12 @@ let bodyContainer = document.querySelector('.body-container');
 
 button.addEventListener('click', (e) => {
     let userChoice = prompt('How many squares would you like in your grid per side? (limit: 100)');
+    let convertedUserChoice = parseInt(userChoice);
 
-    if ( userChoice > 100 ) {
+    if ( convertedUserChoice > 100 ) {
         alert('Please click the button again and enter a value less than or equal to 100.');   
+    } else if ( isNaN(convertedUserChoice) ) {
+        alert('Please click the button again and make sure that you have entered a number.');
     } else {
                 
         if ( bodyContainer.children.length > 2 ) {
@@ -13,7 +16,7 @@ button.addEventListener('click', (e) => {
             bodyContainer.removeChild(removeGrid);
         }
         
-        createGrid(userChoice);
+        createGrid(convertedUserChoice);
         let boxes = document.querySelectorAll('.grid-box');
 
         for (const box of boxes) {
@@ -28,8 +31,6 @@ button.addEventListener('click', (e) => {
 
 function createGrid(dimensions) {
     
-    let totalDimensions = dimensions * dimensions;
-
     let gridContainer = document.createElement('div');
     gridContainer.classList.add('grid-container');
 
