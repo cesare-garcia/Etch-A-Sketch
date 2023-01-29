@@ -40,9 +40,9 @@ button {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    justify-content: flex-start;
-    width: 550px;
-    height: 550px;
+    justify-content: center;
+    width: 960px;
+    height: 960px;
     margin-bottom: 0;
 }
 
